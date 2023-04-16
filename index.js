@@ -15,12 +15,7 @@ app.get('/', function (req, res) {
   res.sendFile(process.cwd() + '/views/index.html');
 });
 
-//app.route('/api/fileanalyse').post(function(req,res){
-
- // console.log(res);/
-
-//})
-//app.use("/api/fileanalyse",bodyParser.urlencoded({extended: false}));
+//installed the multer package then referenced following syntax within the README file.
 app.post('/api/fileanalyse', upload.single('upfile'), function (req, res, next) {
   var name=req.file.originalname;
   var type=req.file.mimetype;
